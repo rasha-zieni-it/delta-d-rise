@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "delta-d-rise"
+version = "0.1.0"
+description = "DELTA-D-RISE: a detection-loss based perturbation explainability method for object detection"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Rasha Zieni" }
+]
+dependencies = [
+  "numpy",
+  "opencv-python",
+  "Pillow",
+  "matplotlib",
+  "torch",
+  "torchvision",
+  "tqdm",
+  "ultralytics",
+]
+
+[tool.setuptools.packages.find]
+include = ["delta_d_rise*"]
