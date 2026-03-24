@@ -1,93 +1,67 @@
-# DELTA-D-RISE
+<h1 align="center">DELTA-D-RISE</h1>
 
-**DELTA-D-RISE: Detection-Loss Based Perturbation Explainability for Object Detection**
+This repository contains the code for our explainability method for object detection models:
 
----
-
-## Overview
-
-Object detection models are widely used in safety-critical applications, but their predictions remain difficult to interpret.
-
-DELTA-D-RISE is a **perturbation-based explainability method** designed specifically for object detection.  
-Unlike existing approaches such as D-RISE, it defines pixel importance using **detection loss deterioration**, directly linking explanations to model performance.
-
----
-
-## Method
-
-For a given detection, we define a detection loss:
-
-L_det = L_cls + L_loc
-
-- **Classification loss**:  
-  L_cls = -log(p_class)
-
-- **Localization loss**:  
-  L_loc = 1 - IoU(b_base, b_masked)
-
-We then define importance as:
-
-Δ = max(0, L_masked - L_base)
-
-This measures **how much masking a region degrades detection performance**.
-
-The final saliency map is computed by aggregating normalized Δ scores over random masks.
-
----
-
-## Key Features
-
-- Detection-aware saliency (classification + localization)
-- Model-agnostic (no gradients required)
-- Per-detection explanations
-- Robustness and deletion-based evaluation
-- Compatible with any object detector via wrapper
-
----
+**DELTA-D-RISE — a detection-loss based perturbation explainability method.**
 
 
-## Installation
+## Project description
 
-```bash
-git clone https://github.com/USER/delta-d-rise.git
-cd delta-d-rise
-pip install -e .
+The goal of this project is to explain object detector predictions by measuring how much the model’s performance degrades when parts of the image are removed.
+
+Instead of using heuristic similarity scores (like D-RISE), we define importance using **detection loss increase**:
+
+- classification loss (confidence drop)
+- localization loss (IoU drop)
+
+For each detection, we generate a saliency map highlighting the regions that matter most for that prediction.
+
+We also evaluate explanations using:
+- robustness (consistency across runs)
+- fidelity (deletion test)
+- object focus (saliency inside bounding boxes)
+
 
 ## Demo
 
-A complete usage example is provided in:
+A full example is available in:
 
 notebooks/demo.ipynb
 
-The notebook demonstrates:
+The notebook shows how to:
+- run DELTA-D-RISE on a detector
+- visualize saliency maps and heatmaps
+- run the full pipeline with evaluation
 
-- Running DELTA-D-RISE on an object detector
-- Generating per-detection saliency maps
-- Visualizing heatmaps
-- Running the full explainability pipeline
+
+## Notes
+
+- The method is model-agnostic: any detector can be used via a wrapper.
+- A YOLO wrapper is included as an example.
 
 ## Paper
 
-This repository accompanies the paper:
+This repository is based on our paper:
 
-**Explainability Metrics for Object Detection Models**
+Explainability Metrics for Object Detection Models
 
-Rasha Zieni et al.
+(Add link when available)
 
-(2026)
-
-[Add link here when available]
 
 ## Acknowledgment
 
-This work was supported by the **ENFIELD Project** ("SAFER AI: Secure, Accurate, Fair, Explainable and Robust AI"), funded by the European Union under grant agreement No 101120657.
+This work was funded by the EC ENFIELD Project. The ”SAFER
+AI: Secure, Accurate, Fair, Explainable and Robust AI” project has received
+funding from the European Union, via the oc3-2025-TES-01 issued and imple-
+mented by the ENFIELD project, under the grant agreement No 101120657.
 
 
-## Authors
+## How to run
 
-- Rasha Zieni  
-- François Picard  
-- Leïla Belmerhnia  
-- Georgios Spathoulas  
-- Walter Quadrini  
-- Paolo Giudici  
+Clone the repository:
+
+```bash
+git clone https://github.com/RZ44/ddelta-d-rise.git
+cd ddelta-d-rise
+
+
