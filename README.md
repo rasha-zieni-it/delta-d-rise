@@ -2,7 +2,7 @@
 
 This repository contains the code for our explainability method for object detection models:
 
-**DELTA-D-RISE — a detection-loss based perturbation explainability method.**
+**DELTA-D-RISE** a detection-loss based perturbation explainability method.
 
 
 ## Project description
