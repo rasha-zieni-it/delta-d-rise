@@ -61,7 +61,7 @@ mented by the ENFIELD project, under the grant agreement No 101120657.
 Clone the repository:
 
 ```bash
-git clone https://github.com/RZ44/ddelta-d-rise.git
+git clone https://github.com/rasha-zieni-it/delta-d-rise.git
 cd ddelta-d-rise
 
 
