@@ -62,6 +62,6 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/rasha-zieni-it/delta-d-rise.git
-cd ddelta-d-rise
+cd delta-d-rise
 
 
