@@ -9,7 +9,7 @@ This repository contains the code for our explainability method for object detec
 
 The goal of this project is to explain object detector predictions by measuring how much the model’s performance degrades when parts of the image are removed.
 
-Instead of using heuristic similarity scores (like D-RISE), we define importance using **detection loss increase**:
+Instead of using heuristic similarity scores (like D-RISE), we define importance using detection loss increase:
 
 - classification loss (confidence drop)
 - localization loss (IoU drop)
