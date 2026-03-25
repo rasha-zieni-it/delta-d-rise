@@ -52,8 +52,7 @@ Explainability Metrics for Object Detection Models
 
 This work was funded by the EC ENFIELD Project. The ”SAFER
 AI: Secure, Accurate, Fair, Explainable and Robust AI” project has received
-funding from the European Union, via the oc3-2025-TES-01 issued and imple-
-mented by the ENFIELD project, under the grant agreement No 101120657.
+funding from the European Union, via the oc3-2025-TES-01 issued and implemented by the ENFIELD project, under the grant agreement No 101120657.
 
 
 ## How to run
