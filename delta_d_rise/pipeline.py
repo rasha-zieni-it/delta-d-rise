@@ -44,7 +44,6 @@ def run_delta_d_rise_full(
     seed0: int = 0,
     grid: Tuple[int, int] = (16, 16),
     topk_frac: float = 0.10,
-    invert_for_display: bool = False,
     preset_name: str = "CUSTOM",
 ) -> FullDeltaDRISEResult:
     ensure_dir(out_dir)
@@ -90,7 +89,7 @@ def run_delta_d_rise_full(
         np.save(raw_path, sal_np)
         raw_map_paths.append(raw_path)
 
-        vis_heat = (1.0 - sal_np) if invert_for_display else sal_np
+        vis_heat = sal_np
         vis = overlay_heatmap_np(img_rgb, vis_heat, alpha=0.55)
 
         base_box = boxes_np[det_idx]
