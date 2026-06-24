@@ -45,7 +45,7 @@ This repository is based on our paper:
 
 Explainability Metrics for Object Detection Models
 
-(Add link when available)
+https://zenodo.org/records/19366688
 
 
 ## Acknowledgment
